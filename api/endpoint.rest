@@ -1,0 +1,11 @@
+GET https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1 HTTP/1.1
+
+Accept: application/json
+Content-Type: application/json
+
+###
+GET https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=100 HTTP/1.1
+
+Accept: application/json
+Content-Type: application/json
+
