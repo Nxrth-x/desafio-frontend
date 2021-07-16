@@ -56,5 +56,6 @@ html,
 body {
   font-size: 14px;
   color: var(--gray-dark);
+  scroll-behavior: smooth;
 }
 /*# sourceMappingURL=resets.css.map */

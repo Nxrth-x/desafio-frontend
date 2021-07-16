@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Desafio front-end Linx" />
     <title>Desafio front-end | Linx</title>
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="src/styles/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,16 +25,18 @@
           navegação. Aproveite!
         </p>
         <div class="links">
-          <a role="button" href="#" target="_blank">Conheça a Linx</a>
-          <a role="button" href="#" target="_blank">Ajude o algoritmo</a>
-          <a role="button" href="#">Seus produtos</a>
-          <a role="button" href="#">Compartilhe</a>
+          <a role="button" href="https://www.linx.com.br/" target="_blank"
+            >Conheça a Linx</a
+          >
+          <a role="button" href="#algorithm">Ajude o algoritmo</a>
+          <a role="button" href="#products">Seus produtos</a>
+          <a role="button" href="#share">Compartilhe</a>
         </div>
       </div>
     </section>
     <main class="container">
       <!-- Formulário - Algoritmo -->
-      <section class="algorithm-form">
+      <section class="algorithm-form" id="algorithm">
         <!-- Texto -->
         <div class="about">
           <h2>Ajude o algoritmo a ser mais certeiro</h2>
@@ -108,7 +110,7 @@
         </form>
       </section>
       <!-- Lista de produtos -->
-      <section class="product-list">
+      <section class="product-list" id="products">
         <div class="title">
           <h1>Sua seleção especial</h1>
         </div>
@@ -120,7 +122,37 @@
           </button>
         </div>
       </section>
+      <!-- Formulário de newsletter -->
+      <section class="newsletter-form" id="share">
+        <div class="title">
+          <h1>Compartilhe a novidade</h1>
+        </div>
+        <p>
+          Quer que seus amigos também ganhem a lista personalizada deles?
+          Preencha agora
+        </p>
+        <form>
+          <div class="inputs">
+            <div>
+              <label for="name">Nome do seu amigo(a):</label>
+              <input type="text" required title="Digite um nome válido" />
+            </div>
+            <div>
+              <label for="email">E-mail:</label>
+              <input type="email" required />
+            </div>
+          </div>
+          <button type="submit">Enviar agora</button>
+        </form>
+      </section>
     </main>
+    <footer>
+      <div class="container">
+        <p>Testando suas habilidades em HTML, CSS e JS.</p>
+        <p><a href="https://www.linx.com.br/">Linx Impulse</a></p>
+        <p>2019</p>
+      </div>
+    </footer>
   </body>
-  <script src="main.js" type="module"></script>
+  <script src="src/main.js" type="module"></script>
 </html>
