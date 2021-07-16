@@ -1,0 +1,119 @@
+@import 'mixins.scss', 'resets.scss';
+
+html,
+body {
+  font-size: 12px;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.main-heading {
+  padding: 2rem 0 4rem;
+
+  // Slanted background
+  // Refer back to: https://bennettfeely.com/clippy/
+  background: var(--gray-dark);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+
+  color: var(--white);
+
+  text-align: center;
+
+  h2 {
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-weight: 500;
+    font-size: 3rem;
+  }
+}
+
+section.mail {
+  @include flex-col();
+
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  div.products {
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+
+    div.product-card {
+      div.product-image {
+        margin-bottom: 1rem;
+        padding: 1rem;
+
+        border: 1px solid var(--gray-light);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      div.product-info {
+        h2 {
+          margin-bottom: 1rem;
+
+          font-size: 1.25rem;
+          font-weight: 400;
+        }
+
+        p,
+        span,
+        b {
+          font-size: 1rem;
+        }
+
+        p.description {
+          margin-bottom: 1rem;
+        }
+
+        p.price {
+          b {
+            font-weight: 500;
+            font-size: 1.25rem;
+          }
+        }
+
+        button {
+          margin-top: 1rem;
+          @include base-button();
+        }
+      }
+    }
+  }
+
+  a {
+    @include base-button();
+
+    text-align: center;
+    align-self: center;
+
+    width: 80%;
+  }
+}
+
+footer {
+  padding: 6rem 0 3rem;
+
+  background: var(--gray-dark);
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+
+  color: var(--white);
+
+  div {
+    text-align: center;
+  }
+}

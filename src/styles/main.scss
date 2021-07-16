@@ -9,6 +9,12 @@ $transition: 250ms ease-in-out;
   margin: 0 auto;
 }
 
+.mail-container {
+  margin: 0 auto;
+  max-width: 42rem;
+  width: 100%;
+}
+
 .main-heading {
   padding-bottom: 2rem;
 
@@ -324,5 +330,15 @@ footer {
 
   div {
     text-align: center;
+  }
+}
+
+section.mail {
+  margin: 4rem 0;
+  padding: 0 1rem;
+
+  h1 {
+    font-weight: 400;
+    font-size: 1.5rem;
   }
 }

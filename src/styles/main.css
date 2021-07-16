@@ -13,24 +13,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-@media (max-width: 1024px) {
-  html {
-    font-size: 93.75%;
-  }
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: 87.5%;
-  }
-}
-
-@media (max-width: 640px) {
-  html {
-    font-size: 81.25%;
-  }
-}
-
 p,
 input,
 span,
@@ -63,6 +45,12 @@ body {
   max-width: 80rem;
   width: 90%;
   margin: 0 auto;
+}
+
+.mail-container {
+  margin: 0 auto;
+  max-width: 42rem;
+  width: 100%;
 }
 
 .main-heading {
@@ -465,5 +453,15 @@ footer {
 
 footer div {
   text-align: center;
+}
+
+section.mail {
+  margin: 4rem 0;
+  padding: 0 1rem;
+}
+
+section.mail h1 {
+  font-weight: 400;
+  font-size: 1.5rem;
 }
 /*# sourceMappingURL=main.css.map */

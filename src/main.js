@@ -23,8 +23,7 @@ async function handleRenderProducts() {
   const productsContainer = $('.products')
 
   data.products.forEach(product => {
-    productsContainer.innerHTML =
-      productsContainer.innerHTML + createProductCard(product)
+    productsContainer.innerHTML += createProductCard(product)
   })
 }
 
