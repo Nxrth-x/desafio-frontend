@@ -118,7 +118,7 @@ body {
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .main-heading > div h2,
   .main-heading > div h1,
   .main-heading > div p {
