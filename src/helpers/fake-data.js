@@ -4,7 +4,7 @@ const data = {
       id: 0,
       name: 'Product Number 0',
       image:
-        '//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo=6747399',
+        'https://imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo=6747399',
       oldPrice: 307,
       price: 296,
       description:

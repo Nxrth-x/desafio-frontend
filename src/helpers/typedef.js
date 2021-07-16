@@ -14,6 +14,7 @@
  * @property {number} oldPrice Product's price with unapplied discount
  * @property {number} price Product's current price
  * @property {string} description Product's description
+ * @property {string} image Product's image
  *
  * @property {Installment} installments Product's installments
  *

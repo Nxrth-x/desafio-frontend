@@ -64,22 +64,24 @@
           <!-- Nome -->
           <div class="input">
             <label for="name">Seu nome:</label>
-            <input type="text" name="name" />
+            <input type="text" name="name" required />
           </div>
           <!-- Email -->
           <div class="input">
             <label for="email">Email</label>
-            <input type="email" name="email" />
+            <input type="email" name="email" required />
           </div>
           <!-- CPF -->
           <div class="input">
             <label for="cpf">CPF:</label>
             <input
               type="text"
-              pattern="^[\d]{3}-[\d]-[\d]{3}-[\d]{3}\.[\d]{2}$"
-              title="CPF válido com pontuação"
+              pattern="^[\d]{3}\.[\d]{3}\.?[\d]{3}-?[\d]{2}$"
+              title="Por favor, digite um CPF válido com pontuação."
+              required
             />
           </div>
+          <!-- Sexo -->
           <div class="radio-input">
             <div>
               <input
@@ -87,17 +89,38 @@
                 id="masculino"
                 value="masculino"
                 name="sexo"
+                required
               />
               <label for="masculino">Masculino</label>
             </div>
             <div>
-              <input type="radio" id="feminino" value="feminino" name="sexo" />
+              <input
+                type="radio"
+                id="feminino"
+                value="feminino"
+                name="sexo"
+                required
+              />
               <label for="feminino">Feminino</label>
             </div>
           </div>
-          <button type="button">Enviar</button>
+          <button type="submit">Enviar</button>
         </form>
+      </section>
+      <!-- Lista de produtos -->
+      <section class="product-list">
+        <div class="title">
+          <h1>Sua seleção especial</h1>
+        </div>
+        <!-- Produtos -->
+        <div class="products"></div>
+        <div class="load-products">
+          <button onclick="handleRenderProducts()">
+            Ainda mais produtos aqui
+          </button>
+        </div>
       </section>
     </main>
   </body>
+  <script src="main.js" type="module"></script>
 </html>

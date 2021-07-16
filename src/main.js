@@ -1,118 +1,70 @@
-const data = {
-  products: [
-    {
-      id: 0,
-      name: "Product Number 0",
-      image:
-        "//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo=6747399",
-      oldPrice: 307,
-      price: 296,
-      description:
-        "Product long description number 0 just to make more than one like of text.",
-      installments: {
-        count: 10,
-        value: 29.6,
-      },
-    },
-    {
-      id: 1,
-      name: "Product Number 1",
-      image:
-        "//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo=6829158",
-      oldPrice: 293,
-      price: 276,
-      description:
-        "Product long description number 1 just to make more than one like of text.",
-      installments: {
-        count: 10,
-        value: 27.6,
-      },
-    },
-    {
-      id: 2,
-      name: "Product Number 2",
-      image:
-        "//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo=6747399",
-      oldPrice: 373,
-      price: 339,
-      description:
-        "Product long description number 2 just to make more than one like of text.",
-      installments: {
-        count: 10,
-        value: 33.9,
-      },
-    },
-    {
-      id: 3,
-      name: "Product Number 3",
-      image:
-        "//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo=6829158",
-      oldPrice: 205,
-      price: 165,
-      description:
-        "Product long description number 3 just to make more than one like of text.",
-      installments: {
-        count: 10,
-        value: 16.5,
-      },
-    },
-    {
-      id: 4,
-      name: "Product Number 4",
-      image:
-        "//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo=6670538",
-      oldPrice: 108,
-      price: 80,
-      description:
-        "Product long description number 4 just to make more than one like of text.",
-      installments: {
-        count: 10,
-        value: 8,
-      },
-    },
-    {
-      id: 5,
-      name: "Product Number 5",
-      image:
-        "//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo=6670538",
-      oldPrice: 238,
-      price: 219,
-      description:
-        "Product long description number 5 just to make more than one like of text.",
-      installments: {
-        count: 10,
-        value: 21.9,
-      },
-    },
-    {
-      id: 6,
-      name: "Product Number 6",
-      image:
-        "//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo=6670538",
-      oldPrice: 383,
-      price: 344,
-      description:
-        "Product long description number 6 just to make more than one like of text.",
-      installments: {
-        count: 10,
-        value: 34.4,
-      },
-    },
-    {
-      id: 7,
-      name: "Product Number 7",
-      image:
-        "//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo=6506376",
-      oldPrice: 305,
-      price: 255,
-      description:
-        "Product long description number 7 just to make more than one like of text.",
-      installments: {
-        count: 10,
-        value: 25.5,
-      },
-    },
-  ],
-  nextPage:
-    "frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=2",
-};
+import API from './services/api.js'
+import $ from './helpers/ui.js'
+import { bindFunctionsToWindow } from './helpers/window.js'
+import './helpers/typedef.js'
+
+const UI_DATA = {
+  currentURL:
+    'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1',
+  nextURL: null,
+}
+
+/**
+ *
+ * @param {string} page
+ * @returns {ProductAPIResponse} API response for the products endpoint
+ */
+async function getProducts(
+  page = 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1',
+) {
+  const data = await API.get(page)
+
+  return data
+}
+
+/**
+ * @param {Product} product
+ */
+function createProductCard(product) {
+  const formatPrice = price => price.toFixed(2).replace('.', ',')
+
+  const HTMLElement = `
+  <div class="product-card">
+    <div>
+      <img
+        src="https://${product.image}"
+        alt="${product.name}"
+      />
+    </div>
+    <h2>${product.name}</h2>
+    <p class="description">
+      ${product.description}
+    </p>
+    <p><span>De:</span> R$ ${formatPrice(product.oldPrice)}</p>
+    <p class="price"><b>Por: R$ ${formatPrice(product.price)}</b></p>
+    <p><span>ou ${product.installments.count}x de R$ ${formatPrice(
+    product.installments.value,
+  )}</span></p>
+    <button>Comprar</button>
+  </div>
+  `
+
+  return HTMLElement
+}
+
+async function handleRenderProducts() {
+  const data = await getProducts(UI_DATA.nextURL || UI_DATA.currentURL)
+
+  UI_DATA.nextURL = `https://${data.nextPage}`
+
+  const productsContainer = $('.products')
+
+  data.products.forEach(product => {
+    productsContainer.innerHTML =
+      productsContainer.innerHTML + createProductCard(product)
+  })
+}
+
+bindFunctionsToWindow([handleRenderProducts])
+
+handleRenderProducts()
