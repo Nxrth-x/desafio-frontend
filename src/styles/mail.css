@@ -47,7 +47,8 @@ body {
 }
 
 .container {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -91,8 +92,6 @@ section.mail div.products {
   margin: 2rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
   gap: 4rem;
 }
 
@@ -139,6 +138,13 @@ section.mail div.products div.product-card div.product-info button {
   background-color: var(--white);
   border: 1px solid var(--gray-light);
   border-radius: 0.25rem;
+}
+
+@media (min-width: 450px) {
+  section.mail div.products {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 section.mail a {

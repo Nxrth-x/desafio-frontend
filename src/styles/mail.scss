@@ -6,7 +6,8 @@ body {
 }
 
 .container {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -47,7 +48,6 @@ section.mail {
   div.products {
     margin: 2rem;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
 
     div.product-card {
@@ -92,6 +92,10 @@ section.mail {
           @include base-button();
         }
       }
+    }
+
+    @media (min-width: 450px) {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
