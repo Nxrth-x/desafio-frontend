@@ -1,14 +1,39 @@
-import $, { createProductCard } from './helpers/ui.js'
-import { getProducts } from './helpers/requests.js'
-import { bindFunctionsToWindow } from './helpers/window.js'
+import $, { createProductCard } from './helpers/ui'
+import { getProducts } from './helpers/requests'
+import { bindFunctionsToWindow } from './helpers/window'
+import { getURLQueryParameters } from './helpers/urls'
+import './helpers/typedef'
 
 /**
  * Stores the request URLs
  */
 const REQUEST_DATA = {
-  baseURL:
-    'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1',
-  nextURL: null,
+  currentPage: 1,
+  nextPage: null,
+}
+
+/**
+ * Helper function to assign the next page URL to the global state
+ *
+ * @param {string} url Next page URL
+ */
+function assignNextPageURL(url) {
+  const formattedURL = `https://${url}`
+  const queryParameters = getURLQueryParameters(formattedURL)
+  REQUEST_DATA.nextPage = queryParameters.get('page')
+}
+
+/**
+ * Renders a list of products in the UI
+ *
+ * @param {Product[]} products Products to be rendered in the UI
+ */
+function renderProducts(products) {
+  const productsContainer = $('.products')
+
+  products.forEach(product => {
+    productsContainer.innerHTML += createProductCard(product)
+  })
 }
 
 /**
@@ -16,15 +41,12 @@ const REQUEST_DATA = {
  * the products in the UI
  */
 async function handleRenderProducts() {
-  const data = await getProducts(REQUEST_DATA.nextURL || REQUEST_DATA.baseURL)
+  const data = await getProducts(
+    REQUEST_DATA.nextPage || REQUEST_DATA.currentPage,
+  )
 
-  REQUEST_DATA.nextURL = `https://${data.nextPage}`
-
-  const productsContainer = $('.products')
-
-  data.products.forEach(product => {
-    productsContainer.innerHTML += createProductCard(product)
-  })
+  assignNextPageURL(data.nextPage)
+  renderProducts(data.products)
 }
 
 bindFunctionsToWindow([handleRenderProducts])

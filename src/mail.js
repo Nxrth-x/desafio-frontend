@@ -1,10 +1,8 @@
-import $, { createProductCard } from './helpers/ui.js'
-import { getProducts } from './helpers/requests.js'
+import $, { createProductCard } from './helpers/ui'
+import { getProducts } from './helpers/requests'
 
 async function handleRenderProducts() {
   const productsContainer = $('.products')
-
-  console.log(productsContainer)
 
   const data = await getProducts()
   const products = data.products.slice(0, 2)

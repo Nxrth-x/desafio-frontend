@@ -1,15 +1,13 @@
-import API from '../services/api.js'
-import './typedef.js'
+import API from '../services/api'
+import './typedef'
 
 /**
  *
  * @param {string} page
  * @returns {ProductAPIResponse} API response for the products endpoint
  */
-export async function getProducts(
-  page = 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1',
-) {
-  const data = await API.get(page)
+export async function getProducts(page = 1) {
+  const { data } = await API.get(`/products?page=${page}`)
 
   return data
 }
