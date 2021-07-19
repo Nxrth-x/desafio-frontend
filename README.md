@@ -50,8 +50,8 @@ $ docker-compose down
 
 ## Páginas
 
-- [Principal](https://desafio-frontend-six.vercel.app/)
-- [Email](https://desafio-frontend-six.vercel.app/mail.html)
+- [Principal](https://desafio-frontend-olive.vercel.app/)
+- [Email](https://desafio-frontend-olive.vercel.app/mail.html)
 
 ## Autor 📚
 
