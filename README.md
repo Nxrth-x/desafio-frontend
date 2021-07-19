@@ -48,6 +48,11 @@ Para parar a aplicação, aperte <kbd>Ctrl + C</kbd> e/ou rode o comando
 $ docker-compose down
 ```
 
+## Páginas
+
+- [Principal](https://desafio-frontend-six.vercel.app/)
+- [Email](https://desafio-frontend-six.vercel.app/mail.html)
+
 ## Autor 📚
 
 - [GitHub](https://github.com/Nxrth-x)

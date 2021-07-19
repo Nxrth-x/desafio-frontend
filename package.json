@@ -1,16 +1,17 @@
 {
   "name": "desafio-frontend",
   "version": "1.0.0",
+  "author": "Nxrth-x",
   "license": "MIT",
   "scripts": {
     "dev": "parcel public/*.html",
     "build": "parcel build public/*.html"
   },
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.0-beta.2",
     "parcel": "^2.0.0-beta.2"
-  },
-  "dependencies": {
-    "axios": "^0.21.1"
   }
 }

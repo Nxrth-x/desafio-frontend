@@ -49,6 +49,7 @@ async function handleRenderProducts() {
   renderProducts(data.products)
 }
 
-bindFunctionsToWindow([handleRenderProducts])
+// Adds an event listener to the button click to load more products
+$('#load-products').addEventListener('click', handleRenderProducts)
 
 handleRenderProducts()
