@@ -12,26 +12,26 @@
 ## Requisitos 📑
 
 - NodeJS
-- Yarn (ou NPM)
+- NPM
 
 ## Como executar? 💻
 
 - Instalar as dependências
 
 ```sh
-$ yarn
+$ npm i
 ```
 
 - Rodar o projeto
 
 ```sh
-$ yarn dev
+$ npm run dev
 ```
 
 - Criar uma versão de distribuição
 
 ```sh
-$ yarn build
+$ npm run build
 ```
 
 ## Docker 🐳
