@@ -1,15 +1,14 @@
 {
-  "name": "linx-vite-frontend",
+  "name": "desafio-frontend",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
     "dev": "parcel public/*.html",
     "build": "parcel build public/*.html"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-beta.3.1",
-    "parcel": "^2.0.0-beta.3.1"
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "parcel": "^2.0.0-beta.2"
   },
   "dependencies": {
     "axios": "^0.21.1"
