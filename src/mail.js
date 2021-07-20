@@ -12,4 +12,4 @@ async function handleRenderProducts() {
   })
 }
 
-handleRenderProducts()
+window.onload = handleRenderProducts

@@ -5,13 +5,19 @@
   "license": "MIT",
   "scripts": {
     "dev": "parcel public/*.html",
-    "build": "parcel build public/*.html"
+    "build": "parcel build public/*.html",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.21.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
     "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "@types/jest": "^26.0.24",
+    "babel-jest": "^27.0.6",
+    "jest": "^27.0.6",
     "parcel": "^2.0.0-beta.2"
   }
 }
